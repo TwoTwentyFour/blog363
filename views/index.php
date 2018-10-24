@@ -46,7 +46,7 @@
                         <p class="card-text">' . $page->getIntro() . '</p>
                         </div>
                         <div class="card-footer">
-                        <a href="page.php?id=' . $page->getID() . '" class="btn btn-primary">read more...</a>
+                        <a href="read_page.php?id=' . $page->getID() . '" class="btn btn-primary">read more...</a>
                     </div>
                 </div>
             </div>';

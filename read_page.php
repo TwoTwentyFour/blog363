@@ -25,7 +25,7 @@ try
         {
             $pageTile = $page->getTitle();
             include('includes/header.inc.php');
-            include('views/page.html');
+            include('views/read_page.html');
         }
         else
         {

@@ -44,7 +44,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 else
 {
-    // TODO: the form would use add_page.php as an action
     include('views/add_page.view.php');
 }
 
