@@ -1,0 +1,12 @@
+<section class="threeColumns">
+    <article class="twoThirds">
+        <h1>Add a New Page</h1>
+        <?php
+            if ($form->isSubmitted() && $form->validate())
+            {
+                echo '<p>The page has been added!</p>';
+            }
+        ?>
+        <?php echo $form; ?>
+    </article>
+</section>
