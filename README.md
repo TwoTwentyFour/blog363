@@ -1,4 +1,4 @@
-# blog363
+# Blog363
 
 ### What is this? ###
 >A simple blog engine I use to write about what I'm learning, my interests and, from time to time, what I'm working on.
