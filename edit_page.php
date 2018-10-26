@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 
         if ($results)
         {
-            header('Location: edit_page.php?id=' . $id . '');
+            header('Location: read_page.php?id=' . $id . '');
             exit();
         }
         else
