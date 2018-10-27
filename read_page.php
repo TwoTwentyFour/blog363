@@ -1,17 +1,17 @@
 <?php 
 
 require('includes/utilities.inc.php');
+include('includes/header.inc.php');
 
-try
+if (!isset($_GET['id']) ||
+    !filter_var($_GET['id'],
+                FILTER_VALIDATE_INT,
+                array('min_range' => 1)))
 {
-    if (!isset($_GET['id']) ||
-        !filter_var($_GET['id'],
-                    FILTER_VALIDATE_INT,
-                    array('min_range' => 1)))
-    {
-        throw new Exception('The page ID was either null or invalid.');
-    }
-
+    echo '<p style="color: red;">Error: Page ID was invalid.</p>';
+}
+else
+{
     $query = 'SELECT id, title, content, DATE_FORMAT(dateAdded, "%e %M %Y") AS dateAdded FROM pages WHERE id=:id';
     $stmt = $pdo->prepare($query);
     $results = $stmt->execute(array(':id' => $_GET['id']));
@@ -24,24 +24,17 @@ try
         if ($page)
         {
             $pageTile = $page->getTitle();
-            include('includes/header.inc.php');
             include('views/read_page.html');
         }
         else
         {
-            throw new Exception('Fetch of the database returned null.');
+            echo '<p style="color: red;">Error: Unable to create Page object.</p>';
         }
     }
     else
     {
-        throw new Exception('The results of the database query returned null.');
+        echo '<p style="color: red;">Error: Query returned null.</p>';
     }
-}
-catch (Exception $error)
-{
-    $pageTitle = 'Error!';
-    include('includes/header.inc.php');
-    include('views/error.html');
 }
 
 include('includes/footer.inc.php');
