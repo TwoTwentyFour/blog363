@@ -41,41 +41,33 @@ else
 {
     include('includes/header.inc.php');
 
-    try
+    if (!isset($_GET['id']) || !filter_var($_GET['id'],
+                                           FILTER_VALIDATE_INT,
+                                           array('min_range' => 1)))
     {
-        if (!isset($_GET['id']) || !filter_var($_GET['id'],
-                                               FILTER_VALIDATE_INT,
-                                               array('min_range' => 1)))
-        {
-            throw new Exception('The page ID was either null or invalid.');
-        }
-
-        $query = 'SELECT id, creatorid, title, content, dateAdded FROM pages WHERE id=:id';
-        $stmt = $pdo->prepare($query);
-        $results = $stmt->execute(array(':id' => $_GET['id']));
-
-        if ($results)
-        {
-            $stmt->setFetchMode(PDO::FETCH_CLASS, 'Page');     
-            $page = $stmt->fetch();
-
-            if ($user == null || !$user->canEditPages($page))
-            {
-                header("Location: index.php");
-                exit;
-            }
-
-            include('views/edit_page.view.php');
-        }
-        else
-        {
-            throw new Exception('The results from the database query returned null.');
-        }
+        echo '<p style="color: red;">The page ID was either null or invalid.</p>';
     }
-    catch (Exception $e)
+
+    $query = 'SELECT id, creatorid, title, content, dateAdded FROM pages WHERE id=:id';
+    $stmt = $pdo->prepare($query);
+    $results = $stmt->execute(array(':id' => $_GET['id']));
+
+    if ($results)
     {
-        $pageTitle = 'Error!';
-        include('views/error.html');
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Page');     
+        $page = $stmt->fetch();
+
+        if ($user == null || !$user->canEditPages($page))
+        {
+            header("Location: index.php");
+            exit;
+        }
+
+        include('views/edit_page.view.php');
+    }
+    else
+    {
+        echo '<p style="color: red;">The results from the database query returned null.</p>';
     }
 }
 

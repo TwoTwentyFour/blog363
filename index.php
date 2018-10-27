@@ -20,7 +20,7 @@ try
         throw new Exception('No content is available to be viewed at this time.');
     }
 }
-catch (Exception $e)
+catch (Exception $error)
 {
     include('views/error.html');
 }

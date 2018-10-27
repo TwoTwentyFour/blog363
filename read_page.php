@@ -37,7 +37,7 @@ try
         throw new Exception('The results of the database query returned null.');
     }
 }
-catch (Exception $e)
+catch (Exception $error)
 {
     $pageTitle = 'Error!';
     include('includes/header.inc.php');
