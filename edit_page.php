@@ -39,8 +39,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 }
 else
 {
-    include('includes/header.inc.php');
-
     if (!isset($_GET['id']) || !filter_var($_GET['id'],
                                            FILTER_VALIDATE_INT,
                                            array('min_range' => 1)))
@@ -63,6 +61,7 @@ else
             exit;
         }
 
+        include('includes/header.inc.php');
         include('views/edit_page.view.php');
     }
     else
