@@ -8,7 +8,9 @@ if (!isset($_GET['id']) ||
                 FILTER_VALIDATE_INT,
                 array('min_range' => 1)))
 {
-    echo '<p style="color: red;">Error: Page ID was invalid.</p>';
+    ERROR_H::clientMessage('Something is wrong here.');
+    ERROR_H::serverMessage('In file delete_page.php page id is invalid.');
+
 }
 else
 {
