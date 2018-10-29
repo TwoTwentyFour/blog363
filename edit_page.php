@@ -1,6 +1,7 @@
 <?php 
 
 require('includes/utilities.inc.php');
+require('includes/error_handler.inc.php');
 
 if ($user == null || !$user->canCreatePages())
 {
@@ -26,8 +27,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     else
     {
         include('includes/header.inc.php');
-        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
-        ERROR_H::serverMessage('In file edit_page.php: $results was null.');
+        Error_H::clientMessage('Soar-e a-boot dat.');
+        Error_H::serverMessage('$results');
     }
 }
 else
@@ -36,8 +37,8 @@ else
                                            FILTER_VALIDATE_INT,
                                            array('min_range' => 1)))
     {
-        ERROR_H::clientMessage('Seems like that page doesn\'t exists :\\');
-        ERROR_H::serverMessage('In file edit_page.php: page id wasn\'t valid.');
+        Error_H::clientMessage('Soar-e a-boot dat.');
+        Error_H::serverMessage('$_GET[\'id\']');
     }
 
     $query = 'SELECT id, creatorid, title, content, dateAdded FROM pages WHERE id=:id';
@@ -60,8 +61,8 @@ else
     }
     else
     {
-        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
-        ERROR_H::serverMessage('In file edit_page.php: $results was null.');
+        Error_H::clientMessage('Soar-e a-boot dat.');
+        Error_H::serverMessage('$results');
     }
 }
 

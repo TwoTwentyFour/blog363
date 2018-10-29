@@ -1,6 +1,7 @@
 <?php 
 
 require('includes/utilities.inc.php');
+require('includes/error_handler.inc.php');
 
 $pageTitle = 'Blog 363';
 include('includes/header.inc.php');
@@ -15,8 +16,8 @@ if ($results && $results->rowCount() > 0)
 }
 else
 {
-    ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
-    ERROR_H::serverMessage('In file index.php: $results was null.');
+    Error_H::clientMessage('Soar-e a-boot dat.');
+    Error_H::serverMessage('$results');
 }
 
 include('includes/footer.inc.php');

@@ -1,6 +1,7 @@
 <?php
 
 require('includes/utilities.inc.php');
+require('includes/error_handler.inc.php');
 
 set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/local/pear/share/pear');
 require('HTML/QuickForm2.php');
@@ -32,8 +33,8 @@ if ($form->validate())
     }
     else
     {
-        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
-        ERROR_H::serverMessage('In file login.php: $results was null.');
+        Error_H::clientMessage('Soar-e a-boot dat.');
+        Error_H::serverMessage('$results');
     }
 
     if ($user)

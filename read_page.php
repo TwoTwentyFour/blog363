@@ -1,6 +1,7 @@
 <?php 
 
 require('includes/utilities.inc.php');
+require('includes/error_handler.inc.php');
 include('includes/header.inc.php');
 
 if (!isset($_GET['id']) ||
@@ -8,8 +9,8 @@ if (!isset($_GET['id']) ||
                 FILTER_VALIDATE_INT,
                 array('min_range' => 1)))
 {
-    ERROR_H::clientMessage('Seems like that page doesn\'t exists :\\');
-    ERROR_H::serverMessage('In file read_page.php: page id wasn\'t valid.');
+    Error_H::clientMessage('Soar-e a-boot dat.');
+    Error_H::serverMessage('$_GET[\'id\']');
 }
 else
 {
@@ -29,15 +30,14 @@ else
         }
         else
         {
-            ERROR_H::clientMessage('Sorry, something went wrong.');
-            ERROR_H::serverMessage('In file read_page.php: unable to create a page object.');
+            Error_H::clientMessage('Soar-e a-boot dat.');
+            Error_H::serverMessage('$page');
         }
     }
     else
     {
-        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
-        ERROR_H::serverMessage('In file read_page.php: $results was null.');
-
+        Error_H::clientMessage('Soar-e a-boot dat.');
+        Error_H::serverMessage('$results');
     }
 }
 

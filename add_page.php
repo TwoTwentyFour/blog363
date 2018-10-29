@@ -28,8 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     else
     {
         include('includes/header.inc.php');
-        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
-        ERROR_H::serverMessage('In file add_page.php: $results was null.');
+        Error_H::clientMessage('Soar-e a-boot dat.');
+        Error_H::serverMessage('$results');
     }
 }
 else
