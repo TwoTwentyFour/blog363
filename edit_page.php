@@ -26,7 +26,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     else
     {
         include('includes/header.inc.php');
-        echo '<p style="color: red;">Unable to update this page.</p>';
+        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
+        ERROR_H::serverMessage('In file edit_page.php: $results was null.');
     }
 }
 else
@@ -35,7 +36,8 @@ else
                                            FILTER_VALIDATE_INT,
                                            array('min_range' => 1)))
     {
-        echo '<p style="color: red;">The page ID was either null or invalid.</p>';
+        ERROR_H::clientMessage('Seems like that page doesn\'t exists :\\');
+        ERROR_H::serverMessage('In file edit_page.php: page id wasn\'t valid.');
     }
 
     $query = 'SELECT id, creatorid, title, content, dateAdded FROM pages WHERE id=:id';
@@ -58,7 +60,8 @@ else
     }
     else
     {
-        echo '<p style="color: red;">The results from the database query returned null.</p>';
+        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
+        ERROR_H::serverMessage('In file edit_page.php: $results was null.');
     }
 }
 

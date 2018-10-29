@@ -8,7 +8,8 @@ if (!isset($_GET['id']) ||
                 FILTER_VALIDATE_INT,
                 array('min_range' => 1)))
 {
-    echo '<p style="color: red;">Error: Page ID was invalid.</p>';
+    ERROR_H::clientMessage('Seems like that page doesn\'t exists :\\');
+    ERROR_H::serverMessage('In file read_page.php: page id wasn\'t valid.');
 }
 else
 {
@@ -28,12 +29,15 @@ else
         }
         else
         {
-            echo '<p style="color: red;">Error: Unable to create Page object.</p>';
+            ERROR_H::clientMessage('Sorry, something went wrong.');
+            ERROR_H::serverMessage('In file read_page.php: unable to create a page object.');
         }
     }
     else
     {
-        echo '<p style="color: red;">Error: Query returned null.</p>';
+        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
+        ERROR_H::serverMessage('In file read_page.php: $results was null.');
+
     }
 }
 

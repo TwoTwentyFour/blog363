@@ -15,7 +15,8 @@ if ($results && $results->rowCount() > 0)
 }
 else
 {
-    echo '<p style="color: red;">Error: Query returned null.</p>';
+    ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
+    ERROR_H::serverMessage('In file list_pages.php: $results was null.');
 }
 
 include('includes/footer.inc.php');

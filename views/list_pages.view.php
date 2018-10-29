@@ -27,9 +27,8 @@
                         <td>' . $page->getTitle() . '</td>
                         <td>' . $page->getCreatorID() . '</td>
                         <td>' . $page->getDateAdded() . '</td>
-                        <td><a href="\read_page.php?id={$page->getID()}">read here...</a></td>
+                        <td><a href="read_page.php?id=' . $page->getID() . '">read more here...</a></td>
                     </tr>
-            
         ';
     }
     echo '

@@ -25,7 +25,7 @@
                             <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="archive.php">Archive</a>
+                            <a class="nav-link" href="list_pages.php">Archive</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Contact</a>

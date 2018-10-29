@@ -16,15 +16,15 @@ else
     $stmt = $pdo->prepare($query);
     $results = $stmt->execute(array(':id' => $_GET['id']));
 
+    include('includes/header.inc.php');
     if ($results)
     {
-        include('includes/header.inc.php');
         include('views/delete_page.view.php');
     }
     else
     {
-        include('includes/header.inc.php');
-        echo '<p style="color: red;">The page could not be deleted. The query returned null.</p>';
+        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
+        ERROR_H::serverMessage('In file delete_page.php: $results was null.');
     }
 }
 

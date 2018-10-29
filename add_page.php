@@ -1,6 +1,7 @@
 <?php  
 
 require('includes/utilities.inc.php');
+require('includes/error_handler.inc.php');
 
 if ($user == null || !$user->canCreatePages())
 {
@@ -27,7 +28,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     else
     {
         include('includes/header.inc.php');
-        echo '<p style="color: red;">Unable to add this page.</p>';
+        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
+        ERROR_H::serverMessage('In file add_page.php: $results was null.');
     }
 }
 else

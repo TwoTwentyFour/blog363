@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require('includes/utilities.inc.php');
 
@@ -29,6 +29,11 @@ if ($form->validate())
     {
         $stmt->setFetchMode(PDO::FETCH_CLASS, 'User');
         $user = $stmt->fetch();
+    }
+    else
+    {
+        ERROR_H::clientMessage('Trip to the data base came back with nothing. Check for spelling errors.');
+        ERROR_H::serverMessage('In file login.php: $results was null.');
     }
 
     if ($user)
