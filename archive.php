@@ -11,7 +11,7 @@ $results = $pdo->query($query);
 if ($results && $results->rowCount() > 0)
 {
     $results->setFetchMode(PDO::FETCH_CLASS, 'Page');
-    include('views/archive.html');
+    include('views/list_pages.view.php');
 }
 else
 {

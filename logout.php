@@ -12,5 +12,5 @@ if ($user)
 
 $pageTitle = 'Logout';
 include('includes/header.inc.php');
-include('views/logout.html');
+include('views/logout.view.php');
 include('includes/footer.inc.php');

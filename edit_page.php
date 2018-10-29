@@ -14,27 +14,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $content = $_POST['content'];
     $id = $_POST['id'];
 
-    try
-    {
-        $query = 'UPDATE pages SET title=:title, content=:content, dateUpdated=NOW() WHERE id=:id';
-        $stmt = $pdo->prepare($query);
-        $results = $stmt->execute([':title' => $title, ':content' => $content, ':id' => $id]);
+    $query = 'UPDATE pages SET title=:title, content=:content, dateUpdated=NOW() WHERE id=:id';
+    $stmt = $pdo->prepare($query);
+    $results = $stmt->execute([':title' => $title, ':content' => $content, ':id' => $id]);
 
-        if ($results)
-        {
-            header('Location: read_page.php?id=' . $id . '');
-            exit();
-        }
-        else
-        {
-            include('includes/header.inc.php');
-            echo '<p style="color: red;">Unable to update this page.</p>';
-        }
+    if ($results)
+    {
+        header('Location: read_page.php?id=' . $id . '');
+        exit();
     }
-    catch (PDOException $e)
+    else
     {
         include('includes/header.inc.php');
-        echo '<p>Error: ' . $e->getMessage() . '</p>';
+        echo '<p style="color: red;">Unable to update this page.</p>';
     }
 }
 else

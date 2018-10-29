@@ -41,5 +41,5 @@ if ($form->validate())
 
 $pageTitle = 'Login';
 include('includes/header.inc.php');
-include('views/login.html');
+include('views/login.view.php');
 include('includes/footer.inc.php');

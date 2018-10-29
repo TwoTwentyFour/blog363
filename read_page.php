@@ -24,7 +24,7 @@ else
         if ($page)
         {
             $pageTile = $page->getTitle();
-            include('views/read_page.html');
+            include('views/read_page.view.php');
         }
         else
         {

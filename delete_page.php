@@ -19,7 +19,7 @@ else
     if ($results)
     {
         include('includes/header.inc.php');
-        include('views/delete_page.html');
+        include('views/delete_page.view.php');
     }
     else
     {
