@@ -1,7 +1,7 @@
 <?php 
 
 require('includes/utilities.inc.php');
-require('includes/error_handler.inc.php');
+require_once('includes/error_handler.inc.php');
 
 $pageTitle = 'Blog 363';
 include('includes/header.inc.php');

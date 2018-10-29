@@ -1,7 +1,7 @@
 <?php
 
 require('includes/utilities.inc.php');
-require('includes/error_handler.inc.php');
+require_once('includes/error_handler.inc.php');
 
 set_include_path(get_include_path() . PATH_SEPARATOR . '/usr/local/pear/share/pear');
 require('HTML/QuickForm2.php');

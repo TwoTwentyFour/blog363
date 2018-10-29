@@ -1,7 +1,7 @@
 <?php 
 
 require('includes/utilities.inc.php');
-require('includes/error_handler.inc.php');
+require_once('includes/error_handler.inc.php');
 
 $pageTitle = 'Archive';
 include('includes/header.inc.php');
