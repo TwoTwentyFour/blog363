@@ -5,9 +5,13 @@ require_once('includes/error_handler.inc.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
+    $email = $_POST['email'];
+    $password = $_POST['pass'];
+    
     $query = 'SELECT id, userType, username, email FROM users WHERE email=:email AND pass=SHA1(:pass)';
     $stmt = $pdo->prepare($query);
-    $results = $stmt->execute(array(':email' => $email->getValue(), ':pass' => $password->getValue()));
+    $results = $stmt->execute(array(':email' => $email,
+                                    ':pass' => $password));
 
     if ($results)
     {
