@@ -11,8 +11,12 @@ if ($user == null || !$user->canCreatePages())
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    $title = $_POST['title'];
-    $content = $_POST['content'];
+    $title = trim($_POST['title']);
+    $title = stripslashes($title);
+    $title = htmlspecialchars($title);
+    $content = trim($_POST['content']);
+    $content = stripslashes($content);
+    $content = htmlspecialchars($tilte);
 
     $query = 'INSERT INTO pages (creatorID, title, content, dateAdded) VALUES (:creatorID, :title, :content, NOW())';
     $stmt = $pdo->prepare($query);

@@ -11,8 +11,12 @@ if ($user == null || !$user->canCreatePages())
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    $title = $_POST['title'];
+    $title = trim($_POST['title']);
+    $title = stripslashes($title);
+    $title = htmlspecialchars($title);
     $content = $_POST['content'];
+    $content = stripslashes($content);
+    $content = htmlspecialchars($content);
     $id = $_POST['id'];
 
     $query = 'UPDATE pages SET title=:title, content=:content, dateUpdated=NOW() WHERE id=:id';
