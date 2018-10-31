@@ -4,7 +4,7 @@ class Error_H
 {
     public function __construct()
     {
-        die('This class is static, leav it alone.');
+        die('This class is static, leave it alone.');
     }    
 
     public function clientMessage($message)
