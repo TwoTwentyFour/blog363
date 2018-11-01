@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require('includes/utilities.inc.php');
 require_once('includes/error_handler.inc.php');

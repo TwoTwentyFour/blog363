@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $title = trim($_POST['title']);
     $title = stripslashes($title);
     $title = htmlspecialchars($title);
-    $content = $_POST['content'];
+    $content = trim($_POST['content']);
     $content = stripslashes($content);
     $content = htmlspecialchars($content);
     $id = $_POST['id'];
