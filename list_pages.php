@@ -6,7 +6,7 @@ require_once('includes/error_handler.inc.php');
 $pageTitle = 'Archive';
 include('includes/header.inc.php');
 
-$query = 'SELECT id, title, DATE_FORMAT(dateAdded, "%e %M %Y") AS dateAdded FROM pages ORDER BY dateAdded';
+$query = 'SELECT id, title, DATE_FORMAT(dateAdded, "%m-%e-%Y") AS dateAdded FROM pages ORDER BY dateAdded DESC';
 $results = $pdo->query($query);
 
 if ($results && $results->rowCount() > 0)

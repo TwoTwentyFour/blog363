@@ -10,12 +10,16 @@
         <link href="startbootstrap/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <!-- Custom styles for this template -->
         <link href="startbootstrap/css/business-frontpage.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">  
     </head>
     <body>
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="index.php">Blog363</a>
+                <a href="https://github.com/twotwentyfour"><i class="fab fa-github-square" style="font-size: 32px; color: white;"></i></a>&nbsp;
+                <a href="https://www.linkedin.com/in/devan-serres-49316699"><i class="fab fa-linkedin" style="font-size: 32px; color: white;"></i></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
