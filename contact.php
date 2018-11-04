@@ -4,7 +4,7 @@ require('includes/error_handler.inc.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST')
 {
-    $to = 'dserres@pm.me';
+    $to = '';
 
     $name = trim($_POST['name']);
     $name = stripslashes($name);
