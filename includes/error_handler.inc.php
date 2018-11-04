@@ -7,7 +7,7 @@ class Error_H
         die('This class is static, leave it alone.');
     }    
 
-    public function clientMessage($message)
+    public function clientMessage($message = "Standard Message")
     {
         echo '<p style="color: red;">Error: ' . $message . '</p>';
     }

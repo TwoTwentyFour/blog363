@@ -32,7 +32,7 @@
                             <a class="nav-link" href="list_pages.php">Archive</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
+                            <a class="nav-link" href="contact.php">Contact</a>
                         </li>
                             <?php 
                                 if ($user)

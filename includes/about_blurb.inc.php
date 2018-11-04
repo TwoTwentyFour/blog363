@@ -3,7 +3,7 @@
         <h2 class="mt-4">What This Is</h2>
         <p>A blog I started as a class project.</p>
         <p>
-            <a class="btn btn-primary btn-lg" href="#">Call to Action &raquo;</a>
+            <a class="btn btn-primary btn-lg" href="contact.php">Call to Action &raquo;</a>
         </p>
     </div>
     <div class="col-sm-4">
