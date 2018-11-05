@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $title = htmlspecialchars($title);
     $content = trim($_POST['content']);
     $content = stripslashes($content);
-    $content = htmlspecialchars($content);
+    // $content = htmlspecialchars($content);
 
     $query = 'INSERT INTO pages (creatorID, title, content, dateAdded) VALUES (:creatorID, :title, :content, NOW())';
     $stmt = $pdo->prepare($query);

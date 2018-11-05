@@ -16,7 +16,7 @@ if ($results && $results->rowCount() > 0)
 }
 else
 {
-    Error_H::clientMessage('Soar-e a-boot dat.');
+    Error_H::clientMessage('There are no posts to display.');
     Error_H::serverMessage('$results');
 
 }

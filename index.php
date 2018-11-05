@@ -16,7 +16,9 @@ if ($results && $results->rowCount() > 0)
 }
 else
 {
-    Error_H::clientMessage('Soar-e a-boot dat.');
+
+    include('views/index.php');
+    Error_H::clientMessage('No posts... Yet!');
     Error_H::serverMessage('$results');
 }
 
