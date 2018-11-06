@@ -14,7 +14,7 @@
         </p>
     </div>
     <div class="col-sm-4">
-        <h2 class="mt-4">Keep in touch...</h2>
+        <h2 class="mt-4">Get in touch...</h2>
         <a href="contact.php"><i class="fas fa-envelope-square" style="font-size: 64px; color: #343A40;"></i></a>
         <a href="https://www.linkedin.com/in/devan-serres-49316699"><i class="fab fa-linkedin" style="font-size: 64px; color: #343A40;"></i></a>
         <a href="https://github.com/twotwentyfour"><i class="fab fa-github-square" style="font-size: 64px; color: #343A40;"></i></a>

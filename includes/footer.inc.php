@@ -1,8 +1,10 @@
     </div>
     <!-- Footer -->
     <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; Your Website 2018</p>
+      <div class="container" style="text-align: center;">
+        <a href="https://github.com/twotwentyfour"><i class="fab fa-github-square" style="font-size: 64px; color: white;"></i></a>
+        <a href="https://www.linkedin.com/in/devan-serres-49316699"><i class="fab fa-linkedin" style="font-size: 64px; color: white;"></i></a>
+        <a href="contact.php"><i class="fas fa-envelope-square" style="font-size: 64px; color: white;"></i></a>
       </div>
       <!-- /.container -->
     </footer>
