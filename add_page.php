@@ -16,13 +16,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $title = htmlspecialchars($title);
     $content = trim($_POST['content']);
     $content = stripslashes($content);
-    // $content = htmlspecialchars($content);
+    $category = $_POST['category'];
 
-    $query = 'INSERT INTO pages (creatorID, title, content, dateAdded) VALUES (:creatorID, :title, :content, NOW())';
+    $query = 'INSERT INTO pages (creatorID, title, content, category, dateAdded) VALUES (:creatorID, :title, :content, :category, NOW())';
     $stmt = $pdo->prepare($query);
     $results = $stmt->execute(array(':creatorID' => $user->getID(),
                                     ':title' => $title,
-                                    ':content' => $content));
+                                    ':content' => $content,
+                                    ':category' => $category));
 
     if ($results)
     {

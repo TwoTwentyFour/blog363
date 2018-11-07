@@ -17,7 +17,7 @@ src="http://placehold.it/300x200" -->
         { 
             echo '<div class="col-sm-4 my-4">
                 <div class="card">
-                    <img class="card-img-top" src="images/php_logo.png" alt="">
+                    <img class="card-img-top" src="images/' . $page->getCategory() . '_logo.png" alt="">
                     <div class="card-body">
                         <h4 class="card-title">' . $page->getTitle() . '</h4>
                         <p class="card-text">' . $page->getIntro() . '</p>

@@ -16,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
     $title = htmlspecialchars($title);
     $content = trim($_POST['content']);
     $content = stripslashes($content);
-    // $content = htmlspecialchars($content);
+    $category = $_POST['category'];
     $id = $_POST['id'];
 
-    $query = 'UPDATE pages SET title=:title, content=:content, dateUpdated=NOW() WHERE id=:id';
+    $query = 'UPDATE pages SET title=:title, content=:content, category=:category, dateUpdated=NOW() WHERE id=:id';
     $stmt = $pdo->prepare($query);
-    $results = $stmt->execute([':title' => $title, ':content' => $content, ':id' => $id]);
+    $results = $stmt->execute([':title' => $title, ':content' => $content, ':category' => $category, ':id' => $id]);
 
     if ($results)
     {
@@ -45,7 +45,7 @@ else
         Error_H::serverMessage('$_GET[\'id\']');
     }
 
-    $query = 'SELECT id, creatorid, title, content, dateAdded FROM pages WHERE id=:id';
+    $query = 'SELECT id, creatorid, title, content, category, dateAdded FROM pages WHERE id=:id';
     $stmt = $pdo->prepare($query);
     $results = $stmt->execute(array(':id' => $_GET['id']));
 

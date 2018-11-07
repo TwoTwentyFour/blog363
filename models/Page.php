@@ -6,6 +6,7 @@ class Page
     protected $creatorId = null;
     protected $title = null;
     protected $content = null;
+    protected $category = null;
     protected $dateAdded = null;
     protected $dateUpdated = null;
 
@@ -27,6 +28,35 @@ class Page
     function getContent()
     {
         return $this->content;
+    }
+
+    function getImage()
+    {
+        $image;
+
+        switch($this->category)
+        {
+            case 'linux':
+                $image = 'linux';
+                break;
+            case 'apache':
+                $image = 'apache';
+                break;
+            case 'mysql':
+                $image = 'mysql';
+                break;
+            case 'php':
+                $image = 'php';
+            default:
+                $image = 'dead_ass';
+        }
+        
+        return $image;
+    }
+
+    function getCategory()
+    {
+        return $this->category;
     }
 
     function getDateAdded()

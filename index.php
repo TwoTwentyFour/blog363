@@ -6,7 +6,7 @@ require_once('includes/error_handler.inc.php');
 $pageTitle = 'Blog 363';
 include('includes/header.inc.php');
 
-$query = 'SELECT id, title, content, DATE_FORMAT(dateAdded, "%e %M %Y") AS dateAdded FROM pages ORDER BY dateAdded LIMIT 3';
+$query = 'SELECT id, title, content, category, DATE_FORMAT(dateAdded, "%e %M %Y") AS dateAdded FROM pages ORDER BY dateAdded LIMIT 12';
 $results = $pdo->query($query);
 
 if ($results && $results->rowCount() > 0)
